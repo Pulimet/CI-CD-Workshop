@@ -14,11 +14,11 @@ jobs:
         with:
           java-version: 1.8
 
-      - name: Restore release keystore
-        run: echo "${{ secrets.ENCODED_KEYSTORE }}" | base64 --decode > app/keystore.release
-
       - name: "Give Permissions"
         run: chmod +x gradlew
+
+      - name: Restore release keystore
+        run: echo "${{ secrets.ENCODED_KEYSTORE }}" | base64 --decode > app/keystore.release
 
       - name: "Builds debug build"
         run: ./gradlew assembleDebug
@@ -26,12 +26,12 @@ jobs:
       - name: "Debug Unit tests"
         run: ./gradlew testDebugUnitTest
 
+      - name: Unit tests
+        run: ./gradlew testReleaseUnitTest
+
       - name: Generate APK
         run: ./gradlew assembleRelease
         env:
           MY_APP_STORE_PASSWORD: ${{ secrets.MY_APP_STORE_PASSWORD }}
           MY_APP_KEY_PASSWORD: ${{ secrets.MY_APP_KEY_PASSWORD }}
           MY_APP_KEY_ALIAS: ${{ secrets.MY_APP_KEY_ALIAS }}
-
-      - name: "Release Unit tests"
-        run: ./gradlew testReleaseUnitTest
