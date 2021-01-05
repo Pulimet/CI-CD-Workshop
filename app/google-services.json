@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "889726682225",
+    "project_id": "cicdworkshop-333cb",
+    "storage_bucket": "cicdworkshop-333cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889726682225:android:76eabfd40389fc9fa6c7d0",
+        "android_client_info": {
+          "package_name": "com.example.cicdworkshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889726682225-9mjhl2e8ffvu2risphn13fm9si3h97kg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cicdworkshop",
+            "certificate_hash": "c4da5d712a101d07324e94053ab6185432e03611"
+          }
+        },
+        {
+          "client_id": "889726682225-kfpff3ru90n40oi07aql5qouvcp9jvnv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcNpm8tscs3UihbpZ5N7K0YkIGhQk13sc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889726682225-kfpff3ru90n40oi07aql5qouvcp9jvnv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
