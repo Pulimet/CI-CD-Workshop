@@ -26,7 +26,7 @@ jobs:
       - name: "Debug Unit tests"
         run: ./gradlew testDebugUnitTest
 
-      name: Generate APK
+      - name: Generate APK
         run: ./gradlew assembleRelease
         env:
           MY_APP_STORE_PASSWORD: ${{ secrets.MY_APP_STORE_PASSWORD }}
