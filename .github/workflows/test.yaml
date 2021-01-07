@@ -35,3 +35,17 @@ jobs:
           MY_APP_STORE_PASSWORD: ${{ secrets.MY_APP_STORE_PASSWORD }}
           MY_APP_KEY_PASSWORD: ${{ secrets.MY_APP_KEY_PASSWORD }}
           MY_APP_KEY_ALIAS: ${{ secrets.MY_APP_KEY_ALIAS }}
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: app
+          path: app/build/outputs/apk/release/app-release.apk
+
+      - name: Upload artifact to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{secrets.FIREBASE_APP_ID}}
+          token: ${{secrets.FIREBASE_TOKEN}}
+          groups: testers
+          file: app/build/outputs/apk/release/app-release.apk
